@@ -19,7 +19,6 @@ class Student extends Person{
 public class UpcastingEx{
     public static void main(String[] args){
         Student s = new Student("이재문");
-        Person p = s;
-        System.out.println(p.name);
+        System.out.println(s.name);
     }
 }
