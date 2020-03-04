@@ -1,0 +1,82 @@
+import javax.swing.*;
+import java.util.*;
+import java.awt.*;
+
+public class 로그인 extends JFrame{
+	
+	JPanel panel1;
+	JPanel panel2;
+	JPanel panel3;
+	JLabel adressLb;
+	JLabel idLb;
+	JLabel passwordLb;
+	JLabel imageLb;
+	JTextField idTf;
+	JPasswordField passwordPf;
+	JButton loginBt;
+	JButton signupBt;
+	JButton findoutBt;
+	ImageIcon image;
+	
+	public 로그인() {
+		setTitle("Login");
+		
+		Container c = getContentPane();
+		c.setLayout(new BorderLayout());
+		
+		panel1 = new JPanel();
+		panel1.add(adressLb = new JLabel("환영합니다. 여기는 명지대 수강신청 홈페이지입니다!"));
+		adressLb.setFont(new Font("함초롱돋움",Font.PLAIN,15));
+		panel1.setBackground(Color.WHITE);
+		c.add(panel1, BorderLayout.NORTH);
+		
+		panel2 = new JPanel();
+		panel2.setLayout(null);
+		panel2.add(idLb = new JLabel("ID"));
+		idLb.setFont(new Font("함초롱돋움",Font.PLAIN,15));
+		panel2.add(idTf = new JTextField());
+		panel2.add(passwordLb = new JLabel("PW"));
+		passwordLb.setFont(new Font("함초롱돋움",Font.PLAIN,15));
+		panel2.add(passwordPf = new JPasswordField());
+		panel2.add(loginBt = new JButton("로그인"));
+		loginBt.setFont(new Font("함초롱돋움",Font.PLAIN,15));
+		loginBt.setBackground(Color.WHITE);
+		
+		idLb.setSize(100, 35);
+		idLb.setLocation(50, 75);
+		idTf.setSize(150, 35);
+		idTf.setLocation(100, 75);
+		passwordLb.setSize(100,35);
+		passwordLb.setLocation(50, 125);
+		passwordPf.setSize(150, 35);
+		passwordPf.setLocation(100, 125);
+		loginBt.setSize(100, 100);
+		loginBt.setLocation(300, 65);
+		panel2.setBackground(Color.WHITE);
+		
+		//이미지 삽입 실패
+		image = new ImageIcon("mju.png");
+		imageLb = new JLabel(image);
+		panel2.add(imageLb);
+		
+		c.add(panel2, BorderLayout.CENTER);
+		
+		panel3 = new JPanel();
+		panel3.setLayout(new FlowLayout());
+		panel3.add(signupBt = new JButton("회원가입"));
+		panel3.add(findoutBt = new JButton("PW 찾기"));
+		panel3.setBackground(Color.WHITE);
+		signupBt.setFont(new Font("함초롱돋움",Font.PLAIN,15));
+		findoutBt.setFont(new Font("함초롱돋움",Font.PLAIN,15));
+		signupBt.setBackground(Color.WHITE);
+		findoutBt.setBackground(Color.WHITE);
+		c.add(panel3, BorderLayout.SOUTH);
+		
+		setSize(450, 350);
+		setVisible(true);
+		setResizable(false);
+	}
+	public static void main(String[] args) {
+		new 로그인();
+	}
+}

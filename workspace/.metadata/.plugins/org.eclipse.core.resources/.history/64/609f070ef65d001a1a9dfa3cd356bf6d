@@ -1,0 +1,62 @@
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import java.util.*;
+import java.awt.*;
+
+public class 검색창 extends JFrame{
+	
+	JLabel searchAllLb2;
+	JTextField searchAllTf2;
+	JButton searchAllBt2;
+	JList searchAllList2;
+	JButton searchAllstorageBt2;
+	LineBorder b1;
+	LineBorder b2;
+	
+	public 검색창() {
+		setTitle("searchAll");
+		
+		Container c = getContentPane();
+		c.setBackground(Color.WHITE);
+		c.setLayout(null);
+		
+		searchAllLb2 = new JLabel("전체검색");//크기 세로
+		searchAllTf2 = new JTextField();//크기
+		searchAllBt2 = new JButton("검색");//크기
+		searchAllList2 = new JList();//srcollpane 달기
+		searchAllstorageBt2 = new JButton("담기");
+		b1 = new LineBorder(Color.GREEN,2);
+		b2 = new LineBorder(Color.BLUE,2);
+		
+		c.add(searchAllLb2);
+		c.add(searchAllTf2);
+		c.add(searchAllBt2);
+		c.add(new JScrollPane(searchAllList2));
+		c.add(searchAllstorageBt2);
+		
+		//searchAllList2.setBorder(b1);
+		searchAllLb2.setSize(150,30);
+		searchAllLb2.setLocation(30,30);
+		searchAllLb2.setFont(new Font("함초롱돋움",Font.PLAIN,14));
+		searchAllTf2.setSize(230,30);
+		searchAllTf2.setLocation(100,30);
+		searchAllBt2.setSize(100,30);
+		searchAllBt2.setLocation(350,30);
+		searchAllBt2.setBorder(b1);
+		searchAllBt2.setBackground(Color.WHITE);
+		searchAllBt2.setFont(new Font("함초롱돋움",Font.PLAIN,15));
+		searchAllstorageBt2.setSize(100 ,50);
+		searchAllstorageBt2.setLocation(350,500);
+		searchAllstorageBt2.setBorder(b2);
+		searchAllstorageBt2.setBackground(Color.WHITE);
+		searchAllstorageBt2.setFont(new Font("함초롱돋움",Font.PLAIN,17));
+		
+		setSize(500, 650);
+		setVisible(true);
+		setResizable(false);
+	}
+	public static void main(String[] args) {
+		new 검색창();
+	}
+
+}

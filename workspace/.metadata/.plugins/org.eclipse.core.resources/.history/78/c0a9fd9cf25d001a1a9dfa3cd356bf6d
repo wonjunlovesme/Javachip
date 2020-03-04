@@ -1,0 +1,17 @@
+package test;
+import javax.swing.*;
+import java.util.*;
+import java.awt.*;
+
+public class img extends JFrame{
+	
+	public img() {
+		
+	}
+
+	public static void main(String[] args) {
+	
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package test;
+import javax.swing.*;
+import java.util.*;
+import java.awt.*;
+
+public class img extends JFrame{
+	
+	public img() {
+		Container c = getContentPane();
+		ImageIcon img1 = new ImageIcon("mju.png");
+		JLabel imgBox = new JLabel(img1);
+		imgBox.setSize(50,50);
+		c.add(imgBox);
+		setSize(100, 100);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		new img();
+
+	}
+
+}

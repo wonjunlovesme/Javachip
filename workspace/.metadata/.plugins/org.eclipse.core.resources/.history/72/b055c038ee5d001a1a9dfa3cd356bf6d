@@ -1,0 +1,71 @@
+import javax.swing.*;
+import javax.swing.border.*;
+import java.awt.*;
+import java.util.*;
+
+class 책가방 extends JFrame{
+    JPanel panel1;
+    JPanel panel2;
+
+    JLabel storageLb;
+    JLabel completeLb;
+
+    JList storageList;
+    JList completeList;
+
+    JButton searchCategoryBt;
+    JButton searchAllBt;
+    JButton deleteBt;
+
+    public 책가방(){
+        setTitle("책가방");
+        
+        Container c = getContentPane();
+        
+        LineBorder b1 = new LineBorder(Color.GREEN,2);
+        LineBorder b2 = new LineBorder(Color.RED,2);
+        LineBorder b3 = new LineBorder(Color.BLUE,1);
+        
+        
+        JSplitPane js1 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+        js1.setLeftComponent(panel1 = new JPanel(new FlowLayout()));//borderlayout
+        js1.setResizeWeight(0.80);
+        storageLb = new JLabel("담기");
+        storageList = new JList();
+        completeLb = new JLabel("수강신청 과목");
+        completeList = new JList();    
+        panel1.add(storageLb);
+        panel1.add(storageList);
+        panel1.add(completeLb);
+        panel1.add(completeList);
+        js1.setRightComponent(panel2 = new JPanel());
+        panel2.setLayout(null);
+        searchCategoryBt = new JButton("카테고리");
+        searchAllBt = new JButton("검색");
+        deleteBt = new JButton("삭제");
+        panel2.add(searchCategoryBt);
+        panel2.add(searchAllBt);
+        panel2.add(deleteBt);
+        
+        searchAllBt.setSize(100, 80);
+        searchAllBt.setLocation(40, 50);
+        searchAllBt.setBorder(b1);
+        
+        searchCategoryBt.setSize(100, 80);
+        searchCategoryBt.setLocation(40, 175);
+        searchCategoryBt.setBorder(b1);
+        
+        deleteBt.setSize(100, 50);
+        deleteBt.setLocation(40, 300);
+        deleteBt.setBorder(b2);
+        c.add(js1);
+
+        setSize(1000, 800);
+        setVisible(true);
+        js1.setDividerSize(2);
+    }
+    
+    public static void main(String[] args) {
+    	new 책가방();
+    }
+}
